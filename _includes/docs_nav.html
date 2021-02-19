@@ -1,10 +1,10 @@
-
+{% comment %} OLD and not longer used 2021 {% endcomment %}
 {% if site.data.sidebars.sidebar.entries[0] %}
   {% for item in site.data.sidebars.sidebar.entries %}
 
     {% if item.folders[0] %}
       <!-- First level list -->
-      <ul id="side-nav" class="nav flex-column side-nav{% if include.topNav %} top d-lg-none{% endif %}">
+      <ul id="side-nav" class="nav flex-column side-nav{% if include.topnav %} top d-lg-none{% endif %}">
 
         <!-- First level of items -->
         {% for entry in item.folders %}
@@ -48,22 +48,3 @@
   {% endfor %}
 {% endif %}
 
-<!-- <hr />
-<h6>Auto generated through category</h6>
-
-  <ul id="side-nav2" class="nav flex-column">
-    {% assign mydocs = site.docs | group_by: 'category' %}
-    {% for cat in mydocs %}
-    <li class="nav-item">
-      <a class="nav-link" href="#">{{ cat.name  | capitalize}}</a>
-      <ul id="sub-nav" class="list-group">
-      {% assign items = cat.items | sort: 'order' %}
-      {% for item in items %}
-        <li class="list-group-item {% if item.url == page.url %}active{% endif %}">
-          <a href="{{ item.url }}">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </li>
-    {% endfor %}
-  </ul> -->

@@ -1,0 +1,21 @@
+
+{% assign treeNav=include.nav %}
+
+{% if treeNav.tree %}
+
+    <ul id="sub-nav-level-{{forloop.index0}}" class="list-group"> 
+
+        {% for item in treeNav.tree %}
+
+        <li class="list-group-item">
+            <a id="{{ item.id }}" class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+        
+            {% if item.tree %}
+                {% include tree.html nav=item %}
+            {% endif %}
+        </li>   
+
+        {% endfor %}
+    </ul>
+
+{% endif %}

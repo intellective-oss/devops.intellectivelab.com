@@ -2,31 +2,42 @@
 layout: default
 ---
 
-<div class="row">
-  <div class="port d-none d-lg-block sidebar">
-    {% include docs_nav.html %}
-  </div>
+  <aside class="port d-none d-lg-block">
 
-  <div class="col-md starboard">
-    <h1>{{ page.title }}</h1>
-    {% unless page.toc == false %}
-    {% include toc.html %}
-    {% endunless %}
-    <div id="markdown-content-container">{{ content }}</div>
-    <div style="clear: both;">
-      <p class="text-center">
-        <br />
-        <a
-          target="_blank"
-          href="{{site.git_edit_address}}/{{ page.path }}"
-          class="btn btn-default"
-          role="button"
-        >
-          <i class="fa fa-pencil fa-lg"></i> Improve this page
-        </a>
-      </p>
+    {% include tree_content.html  %}
+
+  </aside>
+
+  <section class="starboard">
+
+    {% include breadcrumb.html %}
+
+    <!-- {% include breadcrumbs.html omit_home=true omit_categories=true omit_date=true %} -->
+
+    <div class="starboard-content-container">
+      <h1>{{ page.title }}</h1>
+      {% unless page.toc == false %}
+      {% include toc.html %}
+      {% endunless %}
+   
+      <div id="markdown-content-container">{{ content }}</div>
+      <div style="clear: both;">
+        <p class="text-center">
+          <br />
+          <a
+            target="_blank"
+            href="{{site.git_edit_address}}/{{ page.path }}"
+            class="btn btn-default"
+            role="button"
+          >
+            <i class="fa fa-pencil fa-lg"></i> Improve this page
+          </a>
+        </p>
+      </div>
+      <hr />
+      {% include section_nav.html %}
+
     </div>
-    <hr />
-    {% include section_nav.html %}
-  </div>
-</div>
+
+  </section>
+

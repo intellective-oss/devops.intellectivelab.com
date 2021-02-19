@@ -1,0 +1,14 @@
+<ul id="side-nav" class="nav flex-column side-nav{% if include.topNav %} top d-lg-none{% endif %}">
+
+    {% for tree in site.data.sidebars.tree.nav %}
+   
+        <li class="nav-item">
+             <a id="{{ tree.id }}" class="nav-link" href="{{ tree.url }}">{{ tree.title }}</a>
+
+            {% include tree.html nav=tree %}
+            
+        </li>
+        
+    {% endfor %}
+
+</ul>

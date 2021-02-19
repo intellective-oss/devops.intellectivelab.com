@@ -1,21 +1,38 @@
 <nav class="navbar navbar-light fixed-top navbar-expand-lg">
-  <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ "/assets/img/Intellective-Logo-docs.png" | relative_url }}" alt="Logo" class="d-inline-block align-top" loading="lazy" />
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse navbar-content-container" id="navbarNav">
-    <div class="navbar-search">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search documentation" aria-label="Search documentation"/>
-        <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-      </form>
+  <div class="container-fluid navbar-container">
+
+    <a class="navbar-brand" href="{{ site.baseurl }}/">
+      <img src="{{ "/assets/img/Intellective-Logo-docs.png" | relative_url }}"
+      alt="Logo" class="d-inline-block align-top" loading="lazy" />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      {% include searchbar.html %}
+
       <form class="form-inline my-2 my-lg-0" action="/docs/contact/contact-us">
-        <button class="btn btn-light my-2 my-sm-0" type="submit">Contact Us</button>
+        <button class="btn btn-light my-2 my-sm-0" type="submit">
+          Contact Us
+        </button>
       </form>
+
+      <div class="d-block d-lg-none">{% include tree_content.html %}</div>
+
     </div>
-    {% include docs_nav.html topNav=true %}
   </div>
+
 </nav>

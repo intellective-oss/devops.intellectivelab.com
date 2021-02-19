@@ -5,16 +5,18 @@
 
 <body>
 
-    {% include topnav.html %}
+    <main>
 
-    <div class="page-content container-fluid">
-        <div class="wrapper">
+        {% include topnav.html %}
+            
             {{ content }}
-        </div>
-    </div>
 
-    {% include footer.html %}
+        {% include footer.html %}
+
+    </main>
+
     {% include js_files.html %}
+
 </body>
 
 </html>

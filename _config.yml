@@ -13,6 +13,7 @@ lang: en-US
 
 baseurl: "/"
 repository: ikozyr/devops.intellectivelab.com
+permalink: pretty
 
 plugins:
   - jekyll-github-metadata
@@ -52,11 +53,13 @@ relative_links:
 
 collections:
   docs:
-    permalink: /:collection/:path/
+    permalink: /:path/
     output: true
   posts:
     permalink: /blog/:year/:month/:day/:title/
     output: true
+
 sass:
   sass_dir: _sass
   style: compressed
+
